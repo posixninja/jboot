@@ -3,8 +3,8 @@ CC = $(CROSS)gcc
 LD = $(CROSS)ld
 OBJCOPY = $(CROSS)objcopy
 INCLUDES = -I../includes
-SUBDIRS = arm fpu
-LIBRARIES = -larm -lfpu
+SUBDIRS = arm fpu board system
+LIBRARIES = -larm -lfpu -lboard -lsystem
 OBJECTS = entry.o main.o
 CFLAGS = -nostdlib -mlittle-endian -mfpu=vfp -mthumb -mthumb-interwork
 LDFLAGS = -nostdlib -L. -Tjboot.ld

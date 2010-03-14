@@ -1,4 +1,6 @@
 .global arm_invalidate_data_cache
+.global arm_clean_data_cache_mva
+.global arm_invalidate_instruction_cache
 
 .code 32
 arm_invalidate_data_cache:
@@ -17,4 +19,17 @@ inside:
     bne     outside
     mov     r0, #0
     mcr     p15, 0, r0, c7, c10, 4
+    bx      lr
+
+arm_clean_data_cache_mva:
+	mcr     p15, 0, r0, c7, c10, 1
+	bx      lr
+
+arm_invalidate_instruction_cache:
+    mov     r0, #0
+    mcr     p15, 0, r0, c7, c5, 0
+    nop
+    nop
+    nop
+    nop
     bx      lr
