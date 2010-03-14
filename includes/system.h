@@ -1,3 +1,1 @@
-void system_init() {
-
-}
+void system_init();

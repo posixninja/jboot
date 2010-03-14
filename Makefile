@@ -1,5 +1,5 @@
 all:
-	cd src;make all;cd ..;
+	@cd src;make all;cd ..;
 	
 clean:
-	cd src;make clean;cd ..;
+	@cd src;make clean;cd ..;

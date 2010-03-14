@@ -72,7 +72,7 @@ arm_clear_bss:
 	strlt   r2, [r0],#4
 	blt     arm_clear_bss
 
-	ldr     r0, =(main+1)
+	ldr     r0, =(start+1)
 	mov	    lr, pc
 	blx	    r0
 
