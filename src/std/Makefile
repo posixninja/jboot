@@ -1,9 +1,9 @@
 CROSS ?= arm-elf-
 CC = $(CROSS)gcc
 AR = $(CROSS)ar
-LIBS = libtask.a
+LIBS = libstd.a
 INCLUDES = -I../../includes
-OBJECTS = task_create.o task_start.o task_exit.o task_yield.o task_setup.o
+OBJECTS = printf.o zalloc.o
 CFLAGS = -nostdlib -mlittle-endian -mfpu=vfp -mthumb -mthumb-interwork
 
 %.o:	%.S
