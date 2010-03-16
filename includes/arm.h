@@ -1,3 +1,6 @@
+#ifndef ARM_H
+#define ARM_H
+
 int arm_init();
 
 unsigned int arm_read_control();
@@ -17,3 +20,5 @@ void arm_invalidate_data_cache();
 void arm_clean_data_cache_mva();
 
 void arm_invalidate_tlb();
+
+#endif
