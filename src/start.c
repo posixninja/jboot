@@ -17,6 +17,6 @@ int start() {
 	return 0;
 }
 
-void main_task() {
+void main_task(void* arg) {
 
 }

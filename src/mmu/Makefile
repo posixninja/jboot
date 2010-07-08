@@ -1,8 +1,9 @@
 CROSS ?= arm-elf-
 CC = $(CROSS)gcc
 AR = $(CROSS)ar
+LIBS = libmmu.a
 INCLUDES = -I../../includes
-OBJECTS = arm_init.o arm_control.o arm_auxiliary_control.o arm_translation_table.o arm_domain_access.o arm_access_control.o arm_cache.o arm_tlb.o arm_map_memory.o
+OBJECTS = mmu_init.o mmu_map_address.o
 CFLAGS = -nostdlib -mlittle-endian -mfpu=vfp -mthumb -mthumb-interwork
 
 %.o:	%.S
@@ -11,9 +12,9 @@ CFLAGS = -nostdlib -mlittle-endian -mfpu=vfp -mthumb -mthumb-interwork
 %.o:	%.c
 	$(CC) $(INCLUDES) $(CFLAGS) -c $(<) -o $(@)
 
-all: libarm.a
-
-libarm.a:	$(OBJECTS)
+all: $(LIBS)
+	
+$(LIBS): $(OBJECTS)
 	$(AR) r $(@) $(OBJECTS)
 	cp $(@) ..;
 	
