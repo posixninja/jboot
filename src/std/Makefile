@@ -3,7 +3,7 @@ CC = $(CROSS)gcc
 AR = $(CROSS)ar
 LIBS = libstd.a
 INCLUDES = -I../../includes
-OBJECTS = printf.o zalloc.o memset.o strncpy.o
+OBJECTS = printf.o memset.o strncpy.o malloc.o free.o heap.o
 CFLAGS = -nostdlib -mlittle-endian -mfpu=vfp -mthumb -mthumb-interwork
 
 %.o:	%.S
